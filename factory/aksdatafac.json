@@ -1,0 +1,9 @@
+{
+	"name": "aksdatafac",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "30a37b80-1a17-47e5-826b-03a9567bcb88",
+		"tenantId": "b41b72d0-4e9f-4c26-8a69-f949f367c91d"
+	}
+}
