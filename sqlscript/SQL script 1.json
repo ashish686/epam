@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "create table dbo.expedia_hotel_final\nWITH\n( CLUSTERED COLUMNSTORE INDEX,\nDISTRIBUTION = HASH(id)\n\n)\nAS\nselect * from dbo.expedia_hotel",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
