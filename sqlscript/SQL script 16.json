@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 16",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [id]\n,[date_time]\n,[site_name]\n,[posa_continent]\n,[user_location_country]\n,[user_location_region]\n,[user_location_city]\n,[orig_destination_distance]\n,[user_id]\n,[is_mobile]\n,[is_package]\n,[channel]\n,[srch_ci]\n,[srch_co]\n,[srch_adults_cnt]\n,[srch_children_cnt]\n,[srch_rm_cnt]\n,[srch_destination_id]\n,[srch_destination_type_id]\n,[hotel_id]\n FROM [dbo].[Incubation_Azure_target] where id=4",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

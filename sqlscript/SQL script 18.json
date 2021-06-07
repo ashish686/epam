@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 18",
+	"properties": {
+		"content": {
+			"query": "select \n   src.id\n   ,src.date_time                  \n  ,src.site_name                  \n  ,src.posa_continent             \n  ,src.user_location_country      \n  ,src.user_location_region       \n  ,src.user_location_city         \n  ,src.orig_destination_distance  \n  ,src.user_id                    \n  ,src.is_mobile                  \n  ,src.is_package                 \n  ,src.channel                    \n  ,src.srch_ci                    \n  ,src.srch_co                    \n  ,src.srch_adults_cnt            \n  ,src.srch_children_cnt          \n  ,src.srch_rm_cnt                \n  ,src.srch_destination_id        \n  ,src.srch_destination_type_id   \n  ,src.hotel_id\n from dbo.expedia_hotel src\n left join dbo.Incubation_Azure_target tgt\n on src.id=tgt.id\n where tgt.id is null;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

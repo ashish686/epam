@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 6",
+	"properties": {
+		"content": {
+			"query": "\n -- TODO: Set parameter values here \n\n EXECUTE [dbo].[test_proc]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

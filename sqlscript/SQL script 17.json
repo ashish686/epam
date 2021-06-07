@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 17",
+	"properties": {
+		"content": {
+			"query": "select src.id\n   ,src.date_time                  \n  ,src.site_name                  \n  ,src.posa_continent             \n  ,src.user_location_country      \n  ,src.user_location_region       \n  ,src.user_location_city         \n  ,src.orig_destination_distance  \n  ,src.user_id                    \n  ,src.is_mobile                  \n  ,src.is_package                 \n  ,src.channel                    \n  ,src.srch_ci                    \n  ,src.srch_co                    \n  ,src.srch_adults_cnt            \n  ,src.srch_children_cnt          \n  ,src.srch_rm_cnt                \n  ,src.srch_destination_id        \n  ,src.srch_destination_type_id   \n  ,src.hotel_id\n from dbo.expedia_hotel src\n inner join dbo.Incubation_Azure_target tgt\n on src.id=tgt.id\n where (src.date_time <>  tgt.date_time  or        \nsrc.site_name     <> tgt.site_name   or          \nsrc.posa_continent      <>      tgt.posa_continent or \nsrc.user_location_country    <> tgt.user_location_country  or\nsrc.user_location_region   <> tgt.user_location_region or   \nsrc.user_location_city     <>   tgt.user_location_city or \nsrc.orig_destination_distance <> tgt.orig_destination_distance or\nsrc.user_id  <> tgt.user_id          or       \nsrc.is_mobile   <> tgt.is_mobile  or            \nsrc.is_package  <> tgt.is_package or              \nsrc.channel    <> tgt.channel    or            \ncast(src.srch_ci  as nvarchar)  <> cast(tgt.srch_ci  as nvarchar)  or           \ncast(src.srch_co  as nvarchar)    <> cast(tgt.srch_co  as nvarchar)     or          \nsrc.srch_adults_cnt    <> tgt.srch_adults_cnt  or     \nsrc.srch_children_cnt  <> tgt.srch_children_cnt      or \nsrc.srch_rm_cnt         <> tgt.srch_rm_cnt   or   \nsrc.srch_destination_id    <> tgt.srch_destination_id   or\nsrc.srch_destination_type_id  <> tgt.srch_destination_type_id or\nsrc.hotel_id <> tgt.hotel_id)\nand tgt.id=4",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

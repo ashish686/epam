@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 19",
+	"properties": {
+		"content": {
+			"query": "\n -- TODO: Set parameter values here \n\n EXECUTE [dbo].[cdc_Incubation_Azure_target]\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

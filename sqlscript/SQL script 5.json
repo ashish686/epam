@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 5",
+	"properties": {
+		"content": {
+			"query": "CREATE PROC [dbo].[test_proc]\nAS\nBEGIN\nSELECT top(100) * from dbo.expedia_hotel\nEND\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"poolName": "expediadedicated",
+				"databaseName": "expediadedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
