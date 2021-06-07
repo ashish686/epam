@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[test_proc]"
+					"storedProcedureName": "[dbo].[cdc_Incubation_Azure_target]"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureSynapseAnalytics1",
