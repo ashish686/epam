@@ -20,7 +20,8 @@
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
 							"recursive": true,
-							"wildcardFileName": "*",
+							"wildcardFolderPath": "weather",
+							"wildcardFileName": "part-*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
