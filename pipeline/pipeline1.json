@@ -30,7 +30,7 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "drop table dbo.weather",
+						"preCopyScript": "drop table dbo.weather;",
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
