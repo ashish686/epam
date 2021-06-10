@@ -61,6 +61,14 @@
 						"disableMetricsCollection": false
 					},
 					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "",
+						"enableCompression": true
+					},
 					"parallelCopies": 8
 				},
 				"inputs": [
@@ -79,14 +87,7 @@
 			{
 				"name": "cdc_synapse_expedia",
 				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "SQL_Synapse",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
