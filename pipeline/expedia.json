@@ -49,7 +49,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.expedia_raw;",
 						"maxConcurrentConnections": 2,
 						"allowPolyBase": true,
 						"polyBaseSettings": {
