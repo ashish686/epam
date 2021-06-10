@@ -87,7 +87,14 @@
 			{
 				"name": "cdc_synapse_expedia",
 				"type": "SqlServerStoredProcedure",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "SQL_Synapse",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -96,6 +103,9 @@
 					"secureInput": false
 				},
 				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[cdc_expedia]"
+				},
 				"linkedServiceName": {
 					"referenceName": "walg_dev",
 					"type": "LinkedServiceReference"
