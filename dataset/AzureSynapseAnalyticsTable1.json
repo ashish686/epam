@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "expedia_hotel"
+			"table": "expedia_raw"
 		}
 	}
 }
