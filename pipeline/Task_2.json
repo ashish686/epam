@@ -96,11 +96,8 @@
 					"secureInput": false
 				},
 				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[cdc_Incubation_Azure_target]"
-				},
 				"linkedServiceName": {
-					"referenceName": "AzureSynapseAnalytics1",
+					"referenceName": "walg_dev",
 					"type": "LinkedServiceReference"
 				}
 			}
