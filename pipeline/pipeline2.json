@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "SQL_Synapse",
-				"type": "Copy",
+				"name": "cdc_synapse_expedia",
+				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,46 +15,12 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"sink": {
-						"type": "SqlDWSink",
-						"maxConcurrentConnections": 2,
-						"allowPolyBase": true,
-						"polyBaseSettings": {
-							"rejectValue": 0,
-							"rejectType": "value",
-							"useTypeDefault": true
-						},
-						"tableOption": "autoCreate",
-						"disableMetricsCollection": false
-					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "AzureBlobStorage1",
-							"type": "LinkedServiceReference"
-						},
-						"path": "",
-						"enableCompression": true
-					},
-					"parallelCopies": 8
+					"storedProcedureName": "[dbo].[cdc_expedia]"
 				},
-				"inputs": [
-					{
-						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "AzureSynapseAnalyticsTable3",
-						"type": "DatasetReference"
-					}
-				]
+				"linkedServiceName": {
+					"referenceName": "walg_dev",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
