@@ -1,10 +1,10 @@
 {
-	"name": "pipeline1",
+	"name": "weather",
 	"properties": {
 		"activities": [
 			{
-				"name": "Stored procedure1",
-				"type": "SqlServerStoredProcedure",
+				"name": "Weather_blob_synapse",
+				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,10 +15,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[cdc_Incubation_Azure_target]"
+					"notebookPath": "/Shared/Demo/Task4"
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureSynapseAnalytics1",
+					"referenceName": "AzureDatabricks2",
 					"type": "LinkedServiceReference"
 				}
 			}

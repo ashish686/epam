@@ -1,16 +1,16 @@
 {
-	"name": "AzureSynapseAnalyticsTable1",
+	"name": "AzureSynapseAnalyticsTable3",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSynapseAnalytics1",
+			"referenceName": "walg_dev",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "AzureSqlDWTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
-			"table": "expedia_raw"
+			"schema": "dbo.",
+			"table": "expedia"
 		}
 	}
 }

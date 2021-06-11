@@ -1,0 +1,79 @@
+{
+	"name": "masster_pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "exec_expedia",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "expedia",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "exec_hotels",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "hotels",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "exec_weather",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "weather",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "exec_Expedia_DataAnalysis_Procs",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "exec_hotels",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "exec_weather",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "exec_expedia",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Expedia_DataAnalysis_Procs",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}

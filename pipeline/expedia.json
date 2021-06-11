@@ -1,9 +1,9 @@
 {
-	"name": "SQL_Synapse",
+	"name": "expedia",
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook_Blob_SQL",
+				"name": "Expedia_Blob_SQL",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
@@ -15,17 +15,24 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Users/ashish_sinha@epam.com/read-expedia"
+					"notebookPath": "/Shared/Demo/Task2"
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureDatabricks1",
+					"referenceName": "AzureDatabricks2",
 					"type": "LinkedServiceReference"
 				}
 			},
 			{
 				"name": "SQL_Synapse",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Expedia_Blob_SQL",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "7.00:00:00",
 					"retry": 0,
@@ -42,19 +49,26 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.expedia_hotel;",
+						"maxConcurrentConnections": 2,
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						},
 						"tableOption": "autoCreate",
 						"disableMetricsCollection": false
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						},
+						"path": "",
+						"enableCompression": true
+					},
+					"parallelCopies": 8
 				},
 				"inputs": [
 					{
@@ -64,7 +78,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSynapseAnalyticsTable1",
+						"referenceName": "AzureSynapseAnalyticsTable3",
 						"type": "DatasetReference"
 					}
 				]
@@ -89,10 +103,10 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[cdc_Incubation_Azure_target]"
+					"storedProcedureName": "[dbo].[cdc_expedia]"
 				},
 				"linkedServiceName": {
-					"referenceName": "AzureSynapseAnalytics1",
+					"referenceName": "walg_dev",
 					"type": "LinkedServiceReference"
 				}
 			}

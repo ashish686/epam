@@ -1,5 +1,5 @@
 {
-	"name": "AzureSynapseAnalyticsTable1",
+	"name": "AzureSynapseAnalyticsTable2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureSynapseAnalytics1",
@@ -10,7 +10,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "expedia_raw"
+			"table": "weather"
 		}
 	}
 }
