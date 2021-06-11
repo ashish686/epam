@@ -15,7 +15,19 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Demo/task3"
+					"notebookPath": "/Shared/Demo/task3",
+					"libraries": [
+						{
+							"maven": {
+								"coordinates": "com.opencagedata:scala-opencage-geocoder_2.12:1.1.1"
+							}
+						},
+						{
+							"maven": {
+								"coordinates": "ch.hsr:geohash:1.4.0"
+							}
+						}
+					]
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks2",
