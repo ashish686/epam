@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "cdc_synapse_expedia",
+				"name": "Expedia_Analysis_2",
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [],
 				"policy": {
@@ -15,7 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"storedProcedureName": "[dbo].[cdc_expedia]"
+					"storedProcedureName": "[dbo].[Stay_Type_Count_Calc]"
 				},
 				"linkedServiceName": {
 					"referenceName": "walg_dev",
