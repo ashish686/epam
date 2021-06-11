@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook_Blob_SQL",
+				"name": "Expedia_Blob_SQL",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
@@ -27,7 +27,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Notebook_Blob_SQL",
+						"activity": "Expedia_Blob_SQL",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -49,7 +49,6 @@
 					},
 					"sink": {
 						"type": "SqlDWSink",
-						"preCopyScript": "TRUNCATE TABLE dbo.expedia_raw;",
 						"maxConcurrentConnections": 2,
 						"allowPolyBase": true,
 						"polyBaseSettings": {
