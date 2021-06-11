@@ -27,6 +27,19 @@
 					},
 					"waitOnCompletion": true
 				}
+			},
+			{
+				"name": "exec_weather",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "weather",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []
