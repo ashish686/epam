@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Notebook_Blob_SQL",
+				"name": "Expedia_Blob_SQL",
 				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
@@ -27,7 +27,7 @@
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Notebook_Blob_SQL",
+						"activity": "Expedia_Blob_SQL",
 						"dependencyConditions": [
 							"Succeeded"
 						]
